@@ -53,13 +53,24 @@ const { current = '' } = Astro.props;
   .theme-toggle-container {
     width: 75px;
   }
+
+  @media (max-width: 600px) {
+    .theme-toggle-container {
+      display: none;
+    }
+
+    nav {
+      justify-content: center;
+      padding: 0 1rem;
+    }
+  }
 </style>
 
 <nav>
   <a class={(current === "") ? "selected" : ""} href='/'>home</a>
-  <a class={(current === "about") ? "selected" : ""} href='/about'>about us</a>
+  <a class={(current === "about") ? "selected" : ""} href='/about'>about</a>
   <a class={(current === "projects") ? "selected" : ""} href='/projects'>projects</a>
-  <a class={(current === "blog") ? "selected" : ""} href='/blog'>team blog</a>
+  <a class={(current === "blog") ? "selected" : ""} href='/blog'>blog</a>
   <div class="theme-toggle-container">
     <ThemeToggleButton client:load />
   </div>

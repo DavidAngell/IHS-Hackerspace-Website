@@ -263,13 +263,14 @@ input[name='theme-toggle'] {
 
 @media (max-width: 480px) {
   body {
-    font-size: 14px;
+    font-size: 1.1;
+    
   }
 
   p,
   ul,
   ol {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin: 1em 0;
   }
 }
