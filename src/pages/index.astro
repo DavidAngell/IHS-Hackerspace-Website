@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { homepageImageCarousel } from '../data/homepage-data';
+
+const title = 'Ipswich High School Hackerspace';
+const description = 'A place to learn, teach, and explore tech together.';
+const permalink = Astro.site.href;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <div class="home-container">
+    {
+      homepageImageCarousel.map(carouselData => {
+        return (
+          <section class="carousel">
+            <div class="title-section">
+              <h2>{carouselData.title}</h2>
+              <p>{carouselData.description}</p>
+            </div>
+            <div class="image-sections">
+              {
+                carouselData.images.map(imageSet => {
+                  return (
+                    <div class="image-section">
+                      <img src={imageSet} alt="Temp Alt Because I Am Lazy" />
+                    </div>
+                  )
+                })
+              }
+            </div>
+          </section>
+        )
+      })
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .home-container {
+    min-height: 400px;
+    box-shadow: 0 0rem .5rem var(--shadow-color);
+  }
+
+  .carousel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--background-body-alt);
+  }
+
+  .title-section {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-body-alt);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem;
+
+    top: 0;
+    position: sticky;
+  }
+
+  .image-sections {
+    margin: 0;
+    padding: 0;
+  }
+
+  .image-section {
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  .image-section img {
+    height: 100vh;
+    width: auto;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 1200px) {
+    p {
+      font-size: 1.2em;
+    }
+
+    .hero-image {
+      max-width: 400px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .home-container {
+      flex-direction: column;
+    }
+  }
+</style>
