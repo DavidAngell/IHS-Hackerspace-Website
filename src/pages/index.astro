@@ -39,6 +39,8 @@ const permalink = Astro.site.href;
   @media (min-width: 800px) {
     .home-container {
       min-height: 400px;
+      border: 10px solid var(--background-body-alt);
+      border-radius: 20px;
       background-color: var(--background-body-alt);
       /* box-shadow: 0 0rem .5rem var(--shadow-color); */
     }
@@ -83,20 +85,11 @@ const permalink = Astro.site.href;
       object-fit: cover;
       margin: 0;
       padding: 0;
+      border-radius: 10px;
+      box-shadow: 3px 3px 3px var(--shadow-color);
     }
 
   }
-  
-  
-  /* @media (max-width: 1200px) {
-    p {
-      font-size: 1.2em;
-    }
-
-    .hero-image {
-      max-width: 400px;
-    }
-  } */
 
   @media (max-width: 800px) {
     .carousel {
@@ -128,6 +121,7 @@ const permalink = Astro.site.href;
       top: 0; 
       left: 0;
       z-index: -1;
+      border-radius: 10px;
     }
 
     .image-sections {
@@ -146,8 +140,10 @@ const permalink = Astro.site.href;
     .image-section img {
       width: 100%;
       object-fit: cover;
-      margin: 0;
+      margin: .5rem 0 0 0;
       padding: 0;
+      border-radius: 10px;
+      box-shadow: 3px 3px 3px var(--shadow-color);
     }
   }
 </style>
