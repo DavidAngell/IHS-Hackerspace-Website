@@ -18,4 +18,5 @@ export default defineConfig({
       ],
     ],
   },
+  site: 'https://www.my-site.dev',
 })
