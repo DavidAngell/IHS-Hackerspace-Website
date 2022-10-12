@@ -18,7 +18,7 @@
   --primary-color-rgb: 255, 206, 57;
   --primary-color: rgb(var(--primary-color-rgb));
   --background-body: #fff;
-  --background-body-alt: rgb(255, 255, 255);
+  --background-body-alt: rgb(218, 218, 218);
   --text-main: #36393b;
   --text-secondary: #6b6f72;
   --shadow-color: rgba(66, 66, 66, 0.671);

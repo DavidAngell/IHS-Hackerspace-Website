@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import IconLink from '../components/IconLink.astro';
 
-const title = 'About Us';
+const title = 'IHS Hackerspace: About Us';
 const description = 'About the IHS Hackerspace team.';
 const permalink = `${Astro.site.href}about`;
 
-import { ourMission, memberList } from '../data/projects-data';
+import { ourMission, memberList } from '../data/about-data';
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="about">
@@ -18,11 +19,20 @@ import { ourMission, memberList } from '../data/projects-data';
     <div class="people">
       {
         memberList.leaders.map(leader => {
+          const links = leader.links;
           return (
             <div class="member-container">
               <h3>{leader.title}</h3>
-              <img src={leader.image} alt={"Picture of " + leader.name}/>
-              <h4>{leader.name}</h4>
+              <a href={links.top}>
+                <img src={leader.image} alt={"Picture of " + leader.name}/>
+              </a>
+              <h4>{leader.name} — Class of {leader.graduation_year}</h4>
+              <div class="leader-links">
+                { links.github && <IconLink link={links.github} icon={'mdi:github'} /> }
+                { links.twitter && <IconLink link={links.twitter} icon={'mdi:twitter'} /> }
+                { links.instagram && <IconLink link={links.instagram} icon={'mdi:instagram'} /> }
+                { links.personalWebsite && <IconLink link={links.personalWebsite} icon={'mdi:account-box-outline'} /> }              
+              </div>
               <p>{leader.bio}</p>
             </div>
           )
@@ -35,19 +45,25 @@ import { ourMission, memberList } from '../data/projects-data';
 <style>
   .member-container {
     width: calc(50% - 2rem);
-    margin-bottom: 4rem;
     min-width: 375px;
-    margin: 0 1rem;
+    padding-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
-
   .member-container img {
     border-radius: 10px;
-    margin-bottom: 1rem;
     object-fit: cover;
     min-width: 100%;
     height: 70%;
     width: auto;
-    box-shadow: 5px 5px 2px rgba(var(--primary-color-rgb), 0.5);
+    margin-bottom: 1rem;
+    transition: all 250ms ease-in;
+    cursor: pointer;
+  }
+
+  .member-container img:hover {
+    box-shadow: 0 2px 2px rgba(var(--primary-color-rgb), 0.5);
+    transform: translateY(-3px);
   }
 
 
@@ -59,7 +75,13 @@ import { ourMission, memberList } from '../data/projects-data';
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 -1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  .leader-links {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   @media (max-width: 800px) {
@@ -79,12 +101,17 @@ import { ourMission, memberList } from '../data/projects-data';
     p {
       padding-left: 2rem;
       padding-right: 2rem;
+      text-align: center;
     }
 
     .member-container {
       width: 80%;
-      margin-bottom: 4rem;
       min-width: 375px;
+      padding-bottom: 1rem;
+    }
+
+    .leader-links {
+      justify-content: center;
     }
   }
 </style>

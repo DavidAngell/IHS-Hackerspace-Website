@@ -1,0 +1,56 @@
+---
+import '../styles/fonts.css'
+import '../styles/global.css'
+
+// https://icon-sets.iconify.design/mdi/
+import { Icon } from 'astro-icon'
+
+const { link, title = '', icon } = Astro.props;
+---
+
+<div class="icon-group">
+    <a href={link} target={"_blank"} rel="noopener noreferrer" class={`icon-link ${(title == '') ? "no-text" : ""}`}>
+        <Icon name={icon} class="icon" />
+        {title}
+    </a>
+</div>
+
+<style>
+    .icon-group {
+        display: flex;
+    }
+
+    .icon-link {
+        font-family: var(--font-family-sans);
+        background-color: var(--background-body-alt);
+        padding: 1rem;
+        text-decoration: none;
+        vertical-align: middle;
+        border-radius: 10px;
+        transition: all 250ms ease-in;
+        cursor: pointer;
+    }
+
+    .icon-link:hover {
+        transform: translateY(-3px);
+    }
+
+    .icon-link.no-text {
+        background-color: var(--background-body);
+        padding: 0.5rem 0.5rem 0 0;
+    }
+
+    .icon {
+        height: 2rem;
+        width: 2rem;
+        margin-right: .25rem;
+        vertical-align: middle;
+    }
+
+    @media (max-width: 800px) {
+        .icon-group {
+            justify-content: center;
+            display: flex;
+        }
+    }
+</style>
