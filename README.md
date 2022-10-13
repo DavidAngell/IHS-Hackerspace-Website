@@ -8,12 +8,12 @@ Source code for the IHS Hackerspace website
 ## Hosting Site Locally
 ### Prerequisites
 
-You will need npm and TypeScript to run this.
-* npm
+You will need NPM and TypeScript to run this.
+* [NPM](https://www.npmjs.com/)
   ```sh
   npm install npm@latest -g
   ```
-* npm
+* TypeScript
   ```sh
   npm install typescript -g
   ```
