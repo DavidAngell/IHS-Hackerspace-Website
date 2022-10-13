@@ -1,4 +1,20 @@
+---
+import IconLink from "./IconLink.astro";
+import { footerIconLinks } from "../data/footer";
+---
+
 <footer>
+
+  {
+    Object.entries(footerIconLinks).map(([name, link]) => {
+      return (
+        <div class="icon-links">
+          <IconLink icon={name} link={link} />
+        </div>
+      );
+    })
+  }
+
   <span>
     Based on Astro template by <a href="https://www.twitter.com/Charca" target="_blank" rel="noopener">Maxi Ferreira</a>.
   </span>
@@ -14,4 +30,17 @@
     text-align: center;
     width: 100%;
   }
+
+  span {
+    display: block;
+    margin-top: 1em;
+  }
+
+  .icon-links {
+    margin: 1rem 0.5rem;
+    display: inline-block;
+    justify-content: center;
+  }
+
+  
 </style>
