@@ -23,6 +23,7 @@ You will need NPM and TypeScript to run this.
 1. Clone the repo
    ```sh
    git clone https://github.com/ihs-hackerspace/Website.git
+   cd Website/
    ```
 2. Install NPM packages
    ```sh
