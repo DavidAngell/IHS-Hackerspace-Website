@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Bio from '../../components/Bio.astro';
 import getPostData from '../../utils/getPostData';
 
 export async function getStaticPaths() {
@@ -49,5 +48,12 @@ const permalink = `${Astro.site.href}${slug}`;
   header hr {
     min-width: 100px;
     width: 30%;
+  }
+
+  @media (max-width: 800px) {
+    .container {
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+    }
   }
 </style>
