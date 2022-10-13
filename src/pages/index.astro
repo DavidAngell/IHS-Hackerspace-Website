@@ -22,7 +22,7 @@ const permalink = Astro.site.href;
                 carouselData.images.map(imageSet => {
                   return (
                     <div class="image-section">
-                      <img src={imageSet} alt="Temp Alt Because I Am Lazy" />
+                      <img loading="lazy" src={imageSet} alt="Temp Alt Because I Am Lazy" />
                     </div>
                   )
                 })

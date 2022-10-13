@@ -25,7 +25,7 @@ import { ourMission, memberList } from '../data/about-data';
             <div class="member-container">
               <h3>{leader.title}</h3>
               <a href={links.top}>
-                <img src={leader.image} alt={"Picture of " + leader.name}/>
+                <img loading="lazy" src={leader.image} alt={"Picture of " + leader.name}/>
               </a>
               <h4>{leader.name} — Class of {leader.graduation_year}</h4>
               <div class="leader-links">
@@ -51,6 +51,7 @@ import { ourMission, memberList } from '../data/about-data';
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  
   .member-container img {
     border-radius: 10px;
     object-fit: cover;

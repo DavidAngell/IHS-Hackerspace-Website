@@ -19,7 +19,7 @@ import { ongoingProjects, pastProjects } from '../data/projects-data';
             <div class="project-container">
               <h3>{project.name}</h3>
               <a href={project.blogPost}>
-                <img src={project.image} alt={"Picture of " + project.name}/>
+                <img loading="lazy" src={project.image} alt={"Picture of " + project.name}/>
               </a>
               <p>{project.description}</p>
             </div>
@@ -37,7 +37,7 @@ import { ongoingProjects, pastProjects } from '../data/projects-data';
             <div class="project-container">
               <h3>{project.name}</h3>
               <a href={project.blogPost}>
-                <img src={project.image} alt={"Picture of " + project.name}/>
+                <img loading="lazy" src={project.image} alt={"Picture of " + project.name}/>
               </a>
               <p>{project.description}</p>
             </div>
