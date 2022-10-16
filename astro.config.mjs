@@ -1,13 +1,21 @@
 import { defineConfig } from 'astro/config'
 import svelte from '@astrojs/svelte'
 import mdx from '@astrojs/mdx'
+import path from 'path';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [mdx(), svelte()],
+  // sitemap: true,
   vite: {
     ssr: {
       external: ["svgo"],
+    },
+    resolve: {
+      alias: {
+        '@components': path.resolve('./src/components'),
+      },
+      preserveSymlinks: true
     },
   },
   markdown: {
@@ -23,5 +31,5 @@ export default defineConfig({
       ],
     ],
   },
-  site: 'https://www.my-site.dev',
+  site: 'https://localhost:5000/',
 })
