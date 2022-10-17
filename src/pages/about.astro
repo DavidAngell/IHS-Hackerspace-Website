@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import IconLink from '@components/IconLink.astro';
+import HrHeading from '@components/HrHeading.astro';
 
 const title = 'IHS Hackerspace: About Us';
 const description = 'About the IHS Hackerspace team.';
@@ -11,8 +12,7 @@ import { ourMission, memberList } from '../data/about-data';
 
 <BaseLayout title={title} description={description} permalink={permalink} current="about">
   <div class="container">
-    <h1>About</h1>
-    <hr />
+    <HrHeading headingSize="h1">About Us</HrHeading>
     <h2>Our Mission</h2>
     <p>{ourMission}</p>
 
@@ -73,12 +73,10 @@ import { ourMission, memberList } from '../data/about-data';
     margin-bottom: 1.5rem;
   }
 
-  hr {
-    margin-top: 0px !important;
-  }
-
   .container h2 {
     margin-bottom: 2rem;
+    padding-top: 0;
+    margin-top: 0;
   }
 
   .people {
@@ -95,7 +93,6 @@ import { ourMission, memberList } from '../data/about-data';
   }
 
   @media (max-width: 800px) {
-
     .container h1,
     .container h2,
     .container h3,
@@ -104,12 +101,9 @@ import { ourMission, memberList } from '../data/about-data';
     .container h6 {
       text-align: center;
     }
+
     .container {
       width: 80%;
-    }
-
-    hr {
-      width: 40%;
     }
 
     p {

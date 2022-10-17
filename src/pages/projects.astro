@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import HrHeading from '@components/HrHeading.astro';
 
 const title = 'IHS Hackerspace: Projects';
 const description = 'IHS Hackerspace projects.';
@@ -10,8 +11,9 @@ import { ongoingProjects, pastProjects } from '../data/projects-data';
 
 <BaseLayout title={title} description={description} permalink={permalink} current="projects">
   <div class="container">
-    <h1>Ongoing Projects</h1>
-    <hr />
+    <HrHeading headingSize="h1">
+      Ongoing Projects
+    </HrHeading>
     <div class="projects">
       {
         ongoingProjects.map(project => {
@@ -28,8 +30,10 @@ import { ongoingProjects, pastProjects } from '../data/projects-data';
       }
     </div>
 
-    <h1>Finished Projects</h1>
-    <hr />
+    <HrHeading headingSize="h1">
+      Finished Projects
+    </HrHeading>
+
     <div class="projects">
       {
         pastProjects.map(project => {
@@ -96,10 +100,6 @@ import { ongoingProjects, pastProjects } from '../data/projects-data';
     margin-top: 1rem;
   }
 
-  hr {
-    margin-top: 0px !important;
-  }
-
   @media (max-width: 800px) {
 
     .container h1,
@@ -111,10 +111,6 @@ import { ongoingProjects, pastProjects } from '../data/projects-data';
       text-align: center;
     }
     .container {
-      width: 80%;
-    }
-
-    hr {
       width: 80%;
     }
 

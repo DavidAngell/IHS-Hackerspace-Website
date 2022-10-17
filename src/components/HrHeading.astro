@@ -1,0 +1,61 @@
+---
+export interface Props {
+  headingSize: string;
+}
+
+const { headingSize } = Astro.props;
+---
+
+<div class="heading">
+  {
+    () => {
+      switch (headingSize) {
+        case 'h1': return <h1 class="hr"><slot /></h1>
+        case 'h2': return <h2 class="hr"><slot /></h2>
+        case 'h3': return <h3 class="hr"><slot /></h3>
+        case 'h4': return <h4 class="hr"><slot /></h4>
+        case 'h5': return <h5 class="hr"><slot /></h5>
+        case 'h6': return <h6 class="hr"><slot /></h6>
+        default: return <p class="hr"><slot /></p>
+      }
+    }
+  }
+</div>
+
+<style>
+  .hr {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+  }
+
+  .hr:after {
+    content: '';
+    display: block;
+    border-top: 3px solid var(--primary-color);
+    margin-top: 0.5em;
+  }
+
+  @media (max-width: 800px) {
+    .heading {
+      text-align: center;
+    }
+
+    .hr {
+      display: inline-block;
+      text-align: center;
+      width: auto;
+    }
+
+    .hr:after {
+      content: '';
+      display: block;
+      border-top: 3px solid var(--primary-color);
+      margin-top: 0.5em;
+    }
+
+    hr {
+      display: none;
+    }
+  }
+</style>
