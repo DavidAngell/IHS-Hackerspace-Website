@@ -1,7 +1,9 @@
+import { RelativePath } from "./data-types";
+
 interface HomepageImageSet {
 	title: string;
 	description: string;
-	images: string[];
+	images: RelativePath[];
 }
 
 export const homepageImageCarousel = [

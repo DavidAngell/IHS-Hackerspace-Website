@@ -1,4 +1,4 @@
-import { IconLinkPair } from "./data-types";
+import { IconLinkPair, RelativePath, URL } from "./data-types";
 
 export const ourMission = `
 	We want a space for nerds to come together and share what they love!
@@ -15,8 +15,8 @@ interface LeaderMember {
 	title: string;
 	graduation_year: string;
 	bio: string;
-	image: string;
-	image_redirect: string; // This is the link that the user is sent to when they click on the image of the person
+	image: RelativePath;
+	image_redirect: URL; // This is the link that the user is sent to when they click on the image of the person
 	icon_links: IconLinkPair;
 }
 
@@ -24,8 +24,8 @@ interface PeasantMember {
 	name: string;
 	graduation_year: string;
 	bio: string;
-	image: string;
-	image_redirect: string; // This is the link that the user is sent to when they click on the image of the person
+	image: RelativePath;
+	image_redirect: URL; // This is the link that the user is sent to when they click on the image of the person
 }
 
 

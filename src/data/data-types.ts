@@ -1,7 +1,10 @@
+export type URL = string;
+export type RelativePath = string;
+
 export interface IconLinkPair {
-	'mdi:github'?: string;
-	'mdi:twitter'?: string;
-	'mdi:instagram'?: string;
-    'mdi:account-box-outline'?: string; // Icon for a personal website
-	'discord'?: string; //stored in /src/icons/discord.svg
+	'mdi:github'?: URL;
+	'mdi:twitter'?: URL;
+	'mdi:instagram'?: URL;
+    'mdi:account-box-outline'?: URL; // Icon for a personal website
+	'discord'?: URL; //stored in /src/icons/discord.svg
 }

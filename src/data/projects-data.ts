@@ -1,8 +1,10 @@
+import { RelativePath } from "./data-types";
+
 interface Project {
 	name: string;
 	description: string;
-	image: string;
-	blog_post: string;
+	image: RelativePath;
+	blog_post: RelativePath;
 }
 
 export const ongoingProjects = [

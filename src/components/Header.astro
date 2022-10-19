@@ -5,6 +5,11 @@ import Nav from './Nav.astro'
 const { current = '' } = Astro.props;
 ---
 
+<header>
+  <Logo className="logo" />
+  <Nav current={current} />
+</header>
+
 <style>
   header {
     display: flex;
@@ -21,8 +26,3 @@ const { current = '' } = Astro.props;
     }
   }
 </style>
-
-<header>
-  <Logo className="logo" />
-  <Nav current={current} />
-</header>
