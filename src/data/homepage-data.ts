@@ -1,3 +1,9 @@
+interface HomepageImageSet {
+	title: string;
+	description: string;
+	images: string[];
+}
+
 export const homepageImageCarousel = [
 	{
 		title: 'Machine Learning',
@@ -44,4 +50,4 @@ export const homepageImageCarousel = [
 			'/assets/home/PXL_20211115_223443718.MP.jpg',
 		],
 	},
-]
+] as HomepageImageSet[];

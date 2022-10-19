@@ -20,19 +20,20 @@ import { ourMission, memberList } from '../data/about-data';
     <div class="people">
       {
         memberList.leaders.map(leader => {
-          const links = leader.links;
           return (
             <div class="member-container">
               <h3>{leader.title}</h3>
-              <a href={links.top}>
+              <a href={leader.image_redirect}>
                 <img loading="lazy" src={leader.image} alt={"Picture of " + leader.name}/>
               </a>
               <h4>{leader.name} — Class of {leader.graduation_year}</h4>
               <div class="leader-links">
-                { links.github && <IconLink link={links.github} icon={'mdi:github'} /> }
-                { links.twitter && <IconLink link={links.twitter} icon={'mdi:twitter'} /> }
-                { links.instagram && <IconLink link={links.instagram} icon={'mdi:instagram'} /> }
-                { links.personalWebsite && <IconLink link={links.personalWebsite} icon={'mdi:account-box-outline'} /> }              
+                {
+                  Object.entries(leader.icon_links)
+                    .map(([icon, link]) => (
+                      <IconLink link={link} icon={icon} />
+                    ))
+                }
               </div>
               <p>{leader.bio}</p>
             </div>
