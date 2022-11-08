@@ -21,7 +21,7 @@ import { ourMission, memberList } from '../data/about-data';
       {
         memberList.leaders.map(leader => {
           return (
-            <div class="member-container">
+            <div class="leader-container">
               <h3>{leader.title}</h3>
               <a href={leader.image_redirect}>
                 <img loading="lazy" src={leader.image} alt={"Picture of " + leader.name}/>
@@ -41,11 +41,26 @@ import { ourMission, memberList } from '../data/about-data';
         })
       }
     </div>
+    <div class="people">
+      {
+        memberList.members.map(members => {
+          return (
+            <div class="member-container">
+              <a href={members.image_redirect}>
+                <img loading="lazy" src={members.image} alt={"Picture of " + members.name}/>
+              </a>
+              <h4>{members.name} — Class of {members.graduation_year}</h4>
+              <p>{members.bio}</p>
+            </div>
+          )
+        })
+      }
+    </div>
   </div>
 </BaseLayout>
 
 <style>
-  .member-container {
+  .leader-container {
     width: calc(50% - 2rem);
     min-width: 375px;
     padding-bottom: 2rem;
@@ -53,7 +68,7 @@ import { ourMission, memberList } from '../data/about-data';
     margin-right: 1rem;
   }
 
-  .member-container img {
+  .leader-container img {
     border-radius: 10px;
     object-fit: cover;
     min-width: 100%;
@@ -65,9 +80,29 @@ import { ourMission, memberList } from '../data/about-data';
     background-color: var(--background-body-alt);
   }
 
-  .member-container img:hover {
+  .leader-container img:hover {
     box-shadow: 0 2px 2px rgba(var(--primary-color-rgb), 0.5);
     transform: translateY(-3px);
+  }
+
+  .member-container {
+    width: calc(33% - 2rem);
+    min-width: 200px;
+    padding-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .member-container img {
+    border-radius: 10px;
+    object-fit: cover;
+    min-width: 100%;
+    height: 40vh;
+    width: auto;
+    margin-bottom: 1rem;
+    transition: all 250ms ease-in;
+    cursor: pointer;
+    background-color: var(--background-body-alt);
   }
 
   .container h1 {
@@ -114,6 +149,16 @@ import { ourMission, memberList } from '../data/about-data';
     }
 
     .member-container {
+      width: 80%;
+      min-width: 375px;
+      padding-bottom: 1rem;
+    }
+
+    .member-container img {
+      height: 60vh;
+    }
+
+    .leader-container {
       width: 80%;
       min-width: 375px;
       padding-bottom: 1rem;

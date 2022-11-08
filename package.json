@@ -7,7 +7,10 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "serve": "astro build && firebase serve",
+    "deploy": "astro build && firebase deploy --only hosting:ihs-hackerspace-website",
+    "deploy:example": "astro build && firebase deploy --only hosting:example-ihs-hackerspace-website"
   },
   "devDependencies": {
     "@astrojs/mdx": "^0.8.3",

@@ -10,7 +10,7 @@ export const ourMission = `
 	Thanks David!
 	You're welocome David!
 `
-interface LeaderMember {
+export interface LeaderMember {
 	name: string;
 	title: string;
 	graduation_year: string;
@@ -20,7 +20,7 @@ interface LeaderMember {
 	icon_links: IconLinkPair;
 }
 
-interface PeasantMember {
+export interface PeasantMember {
 	name: string;
 	graduation_year: string;
 	bio: string;
@@ -59,8 +59,8 @@ export const memberList = {
 		{
 			name: "John Fortin",
 			graduation_year: "2023",
-			title: "Underling",
-			bio: "David did my mom — JohnnyFoFo",
+			title: "Co-Founder",
+			bio: "Placeholder bio",
 			image: "/assets/about/john.png",
 			image_redirect: "https://github.com/JohnnyFoFo",
 			icon_links: {
@@ -71,9 +71,31 @@ export const memberList = {
 
 	members: [
 		{
-			name: "placeholder",
-			bio: "My list of accomplishments:",
-			image: "/assets/about/david.png",
+			name: "Placeholder Name",
+			bio: "Placeholder bio for everyone that will be added later.",
+			graduation_year: "2023",
+			image: "/assets/about/place_holder.png",
+			image_redirect: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+		},
+		{
+			name: "Placeholder Name",
+			bio: "Placeholder bio for everyone that will be added later.",
+			graduation_year: "2023",
+			image: "/assets/about/place_holder.png",
+			image_redirect: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+		},
+		{
+			name: "Placeholder Name",
+			bio: "Placeholder bio for everyone that will be added later.",
+			graduation_year: "2023",
+			image: "/assets/about/place_holder.png",
+			image_redirect: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+		},
+		{
+			name: "Placeholder Name",
+			bio: "Placeholder bio for everyone that will be added later.",
+			graduation_year: "2023",
+			image: "/assets/about/place_holder.png",
 			image_redirect: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 		},
 

@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "./dist",
+    "public": "dist",
+    "site": "example-ihs-hackerspace-website",
     "ignore": [
       "firebase.json",
       "**/.*",
