@@ -2,7 +2,7 @@
 
 <!-- OVERVIEW -->
 # IHS Hackerspace Website
-Source code for the IHS Hackerspace website
+Source code for the IHS Hackerspace website. Example found [here](https://example.ihshackerspace.com/)
 
 <!-- HOSTING SITE LOCALLY -->
 ## Hosting Site Locally
