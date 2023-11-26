@@ -16,7 +16,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
     {allPosts.map((post, index) => {
       const href = `/blog/${post.file.split('/').pop().split('.').shift()}`;
       return (
-        <div>
+        <div class="post-block">
           <a href={href}>
             <div class="post-item">
               <h2>{post.frontmatter.title}</h2>
@@ -52,25 +52,33 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
     cursor: pointer;
   }
 
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .post-item {
     transition: all 250ms ease-in;
     padding: 1rem 1rem 2rem 2rem;
     border-radius: 10px;
     margin: 0 auto;
+    cursor: pointer;
+    background-color: var(--background-body-alt);
   }
 
   .post-item:hover {
+    box-shadow: 0 2px 2px rgba(var(--primary-color-rgb), 0.5);
     transform: translateY(-3px);
-    background-color: var(--background-body-alt);
   }
 
   p {
     color: var(--text-main);
   }
 
-  h1 {
+  .container h1 {
     margin-bottom: 0 !important;
-    padding-bottom: 1rem;
+    padding-bottom: 0;
   }
 
   @media (max-width: 800px) {

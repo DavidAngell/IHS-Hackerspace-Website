@@ -1,14 +1,7 @@
 import { IconLinkPair, RelativePath, URL } from "./data-types";
 
 export const ourMission = `
-	We want a space for nerds to come together and share what they love!
-	And we want to bully the robotics team!
-	But mainly the FIRST one :)
-	Get it!
-	It's a play on FIRST Robotics
-	Wow that's so clever
-	Thanks David!
-	You're welocome David!
+	Our mission is to provide a safe and welcoming environment for students to explore their interests in technology and computer science. We aim to provide a space for students to learn and teach others about the topics they are passionate about. We want to create an environment with something fun for everyone, whether you are a beginner or an expert.
 `
 export interface LeaderMember {
 	name: string;
@@ -74,28 +67,28 @@ export const memberList = {
 			name: "Placeholder Name",
 			bio: "Placeholder bio for everyone that will be added later.",
 			graduation_year: "2023",
-			image: "/assets/about/place_holder.png",
+			image: "/assets/social.png",
 			image_redirect: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 		},
 		{
 			name: "Placeholder Name",
 			bio: "Placeholder bio for everyone that will be added later.",
 			graduation_year: "2023",
-			image: "/assets/about/place_holder.png",
+			image: "/assets/social.png",
 			image_redirect: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 		},
 		{
 			name: "Placeholder Name",
 			bio: "Placeholder bio for everyone that will be added later.",
 			graduation_year: "2023",
-			image: "/assets/about/place_holder.png",
+			image: "/assets/social.png",
 			image_redirect: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 		},
 		{
 			name: "Placeholder Name",
 			bio: "Placeholder bio for everyone that will be added later.",
 			graduation_year: "2023",
-			image: "/assets/about/place_holder.png",
+			image: "/assets/social.png",
 			image_redirect: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 		},
 
